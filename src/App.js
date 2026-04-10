@@ -32,11 +32,11 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://yvonnesarah.github.io/react-dictonary-app/"
+            href="https://ya-react-dictionary-app.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
-            hosted on GitHub Pages
+           hosted on Netlify
           </a>
         </footer>
       </div>
