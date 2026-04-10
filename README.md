@@ -44,7 +44,7 @@ No installation is required to use the app. It is hosted online and can be acces
 
 ## 🔗 Live Demo & Repository
 Application can be viewed here: 
-* [Live]()
+* [Live](https://ya-react-dictionary-app.netlify.app/)
 
 * [Repository](https://github.com/yvonnesarah/react-dictionary-app)
 
