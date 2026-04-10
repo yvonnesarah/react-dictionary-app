@@ -1,0 +1,85 @@
+/* Dictionary container */
+.Dictionary {
+  background-color: #ffffff; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Form Section */
+section {
+  margin-bottom: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden; 
+}
+
+/* Input Field */
+input[type="search"] {
+  flex: 1; 
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 16px;
+  border-right: none; 
+  outline: none; 
+}
+
+input[type="search"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Search Button */
+button.btn {
+  background-color: #007bff;
+  border: none;
+  color: #ffffff; 
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.btn:hover {
+  background-color: #0056b3; 
+}
+
+button.btn i {
+  font-size: 18px; 
+}
+
+/* Results Component */
+.Results {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #e9ecef;
+  font-size: 16px;
+  color: #5f1854;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .Dictionary {
+    padding: 15px;
+  }
+
+  input[type="search"] {
+    font-size: 14px;
+  }
+
+  button.btn {
+    padding: 8px 15px;
+  }
+
+  button.btn i {
+    font-size: 16px;
+  }
+}

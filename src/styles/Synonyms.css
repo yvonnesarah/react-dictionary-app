@@ -1,0 +1,15 @@
+.Synonyms {
+  margin-top: 14px;
+  font-size: 14px;
+  white-space: normal;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Each-synonym {
+  border-radius: 40px;
+  border: 1px solid #70757a;
+  padding: 5px 15px;
+  margin-right: 5px;
+}
