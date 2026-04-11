@@ -54,6 +54,14 @@ Before Design
 React Dictionary App
 ![Screenshot](images/before/react-dictionary-app.png "React Dictionary App")
 
+## 🗺️ Roadmap (Planned Features)
+* 🌓 Dark Mode / Theme Toggle – Add a theme switch for better accessibility.
+* 🔊 Audio Pronunciation Button – Let users hear correct pronunciation of words.
+* 📚 Related Words Section – Show antonyms, similar words, and word families.
+* 🏷️ Word Categories – Display parts of speech, origin, and usage examples more clearly.
+* 🔔 Word of the Day – Feature a daily word for learning and engagement.
+* 📌 Recently Searched Panel – Quick access to last 5–10 searched words.
+
 ## 👥 Credit
 Designed and developed by Yvonne Adedeji. 
 
