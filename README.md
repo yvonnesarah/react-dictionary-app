@@ -52,6 +52,7 @@ Application can be viewed here:
 Before Design
 
 React Dictionary App
+
 ![Screenshot](images/before/react-dictionary-app.png "React Dictionary App")
 
 ## 🗺️ Roadmap (Planned Features)
