@@ -66,6 +66,67 @@ footer a:hover {
   text-decoration: none;
 }
 
+/* Light Theme (default) */
+body.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #121212;
+  color: #9ACAFF;
+}
+
+body.dark .App-header {
+  background-color: #1f1f1f;
+}
+
+body.dark main {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark .Dictionary {
+  background-color: #1e1e1e;
+}
+
+body.dark input[type="search"] {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark .Results {
+  background-color: #1e1e1e;
+  color: #392F5A;
+}
+
+body.dark .Meaning .Example {
+  color: #ff9aa2;
+}
+
+body.dark footer {
+  color: #aaa;
+}
+
+/* Toggle Button */
+.theme-toggle {
+  margin: 10px auto 0;
+  display: block;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .App-header h1 {
