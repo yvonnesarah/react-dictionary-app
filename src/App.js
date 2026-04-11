@@ -1,18 +1,34 @@
+import { useState, useEffect } from "react";
 import "../src/styles/App.css";
-
 import Dictionary from "../src/components/Dictionary";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <div className="container">
         <header className="App-header text-center">
           <h1>React Dictionary App</h1>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+          </button>
         </header>
+
         <h2>What word do you want to look up?</h2>
+
         <main>
           <Dictionary defaultKeyword="love" />
         </main>
+
         <footer className="text-center">
           This project was coded by{" "}
           <a
@@ -36,7 +52,7 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-           hosted on Netlify
+            hosted on Netlify
           </a>
         </footer>
       </div>
