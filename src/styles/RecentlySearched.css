@@ -1,29 +1,58 @@
 .RecentlySearched {
-  margin: 15px 0;
-  padding: 10px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--recent-bg, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .recent-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .recent-item {
-  padding: 6px 12px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  background: #f4f4f4;
+  padding: 7px 14px;
+  border: 1px solid var(--recent-border, #e0e0e0);
+  border-radius: 999px;
+  background: var(--recent-item-bg, #f6f6f6);
   cursor: pointer;
   font-size: 13px;
-  transition: 0.2s;
+  font-weight: 500;
+  color: var(--recent-text, #333);
+  transition: all 0.2s ease-in-out;
+  user-select: none;
 }
 
 .recent-item:hover {
   background: #66bfbf;
-  color: white;
+  color: #fff;
   border-color: #66bfbf;
+  transform: translateY(-1px);
+}
+
+.recent-item:active {
+  transform: translateY(0);
+}
+
+.recent-item:focus-visible {
+  outline: 2px solid #66bfbf;
+  outline-offset: 2px;
+}
+
+/* Optional dark mode support */
+@media (prefers-color-scheme: dark) {
+  .RecentlySearched {
+    --recent-bg: #1e1e1e;
+    --recent-border: #333;
+    --recent-item-bg: #2a2a2a;
+    --recent-text: #eaeaea;
+  }
+
+  .recent-item:hover {
+    background: #4fb6b6;
+    border-color: #4fb6b6;
+  }
 }
