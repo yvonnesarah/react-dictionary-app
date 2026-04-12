@@ -1,5 +1,6 @@
 import "../styles/Results.css";
 import Meaning from "./Meaning";
+import RelatedWords from "./RelatedWords";
 
 export default function Results(props) {
   console.log(props.results);
@@ -41,6 +42,8 @@ export default function Results(props) {
               </section>
             );
           })}
+
+          <RelatedWords relatedWords={props.relatedWords} />
 
         {props.results.status && <>{props.results.message}</>}
       </div>
