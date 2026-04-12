@@ -46,3 +46,22 @@
   color: #d9534f; /* A red shade for error messages */
   font-weight: bold;
 }
+
+.audio-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #fd0054;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Dark mode support */
+body.dark .audio-btn {
+  background-color: #444;
+}
