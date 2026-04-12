@@ -1,0 +1,35 @@
+.RelatedWords {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f1f5ff;
+  border-radius: 10px;
+}
+
+.RelatedWords h3 {
+  margin-bottom: 10px;
+  color: #5a67d8;
+}
+
+.related-group {
+  margin-bottom: 10px;
+}
+
+.related-group h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.word-pill {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
