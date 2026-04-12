@@ -1,16 +1,38 @@
 import "../styles/Results.css";
 import Meaning from "./Meaning";
 
-
 export default function Results(props) {
   console.log(props.results);
+
+  function speakWord(word) {
+    if (!word) return;
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-GB";
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  }
+
   if (props.results) {
     return (
       <div className="Results">
         <section className="Word">
           <h2>{props.results.word}</h2>
-          <div className="Phonetic">{props.results.phonetic}</div>
+
+          <div className="Phonetic">
+            {props.results.phonetic}
+          </div>
+
+          {/* 🔊 Button BELOW phonetic */}
+          <button
+            className="audio-btn"
+            onClick={() => speakWord(props.results.word)}
+            title="Hear pronunciation"
+          >
+            🔊 Listen
+          </button>
         </section>
+
         {!!props.results.meanings &&
           props.results.meanings.map(function (meaning, index) {
             return (
@@ -19,6 +41,7 @@ export default function Results(props) {
               </section>
             );
           })}
+
         {props.results.status && <>{props.results.message}</>}
       </div>
     );
