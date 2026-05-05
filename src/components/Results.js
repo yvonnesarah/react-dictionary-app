@@ -32,6 +32,12 @@ export default function Results(props) {
           >
             🔊 Listen
           </button>
+          <button
+           className="audio-btn"
+           onClick={() => props.onFavourite(props.results.word)}
+           >
+            ⭐ Favourite
+            </button>
         </section>
 
         {!!props.results.meanings &&
