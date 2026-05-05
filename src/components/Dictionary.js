@@ -162,11 +162,12 @@ export default function Dictionary(props) {
       {toast && <div className="toast-message">{toast}</div>}
 
       {/* 🔄 LOADING */}
-      {loading && (
-        <div className="loading">
-          🔄 Loading results...
-        </div>
-      )}
+     {loading && (
+     <div className="loading">
+    <div className="spinner"></div>
+    <p>Searching dictionary...</p>
+    </div>
+     )}
 
       {/* RESULTS */}
       {!loading && results && (
