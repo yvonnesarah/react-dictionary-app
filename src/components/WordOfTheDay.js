@@ -1,5 +1,13 @@
 import { useEffect, useState, useCallback } from "react";
 
+/**
+ * Static list of vocabulary words used for the "Word of the Day" feature.
+ * Each entry includes:
+ * - word: the vocabulary term
+ * - meaning: definition of the word
+ * - partOfSpeech: grammatical category
+ * - example: sample usage sentence
+ */
 const WORDS = [
   { word: "serendipity", meaning: "finding something good without looking for it", partOfSpeech: "noun", example: "Meeting her was pure serendipity." },
   { word: "eloquence", meaning: "fluent and persuasive speaking or writing", partOfSpeech: "noun", example: "His eloquence captivated the audience." },
@@ -65,44 +73,68 @@ const WORDS = [
   { word: "zen", meaning: "state of calm mindfulness", partOfSpeech: "noun", example: "Meditation helped her find zen." }
 ];
 
+/**
+ * WordOfTheDay Component
+ * Displays a randomly selected word once per day and persists it in localStorage.
+ */
 export default function WordOfTheDay() {
+    // State to store the currently displayed word entry
   const [entry, setEntry] = useState(null);
 
+   /**
+   * Selects a random word from WORDS,
+   * attaches today's date, stores it in localStorage,
+   * and updates state.
+   */
   const fetchWord = useCallback(() => {
+      // Pick a random word entry
     const randomEntry = WORDS[Math.floor(Math.random() * WORDS.length)];
 
+    // Attach today's date so we can persist daily word
     const data = {
       ...randomEntry,
       date: new Date().toDateString()
     };
 
+     // Save to localStorage for persistence across refreshes
     try {
       localStorage.setItem("wotd", JSON.stringify(data));
     } catch (err) {
       console.warn("Failed to save word:", err);
     }
 
+     // Update component state (note: we store raw word, not date here)
     setEntry(randomEntry);
   }, []);
 
+  /**
+   * On component mount:
+   * - Check if today's word already exists in localStorage
+   * - If yes, use it
+   * - If not, generate a new one
+   */
   useEffect(() => {
     const today = new Date().toDateString();
 
     try {
       const saved = JSON.parse(localStorage.getItem("wotd"));
 
+      // If saved word exists and is from today, reuse it
       if (saved?.date === today) {
         setEntry(saved);
       } else {
         fetchWord();
       }
     } catch {
+         // If anything fails (corrupt storage, etc.), fallback
       fetchWord();
     }
   }, [fetchWord]);
 
+  // Show loading state until word is ready
   if (!entry) return <div className="wotd-loading">Loading word...</div>;
 
+   // Render the word details UI
   return (
     <div className="word-of-day">
       <h3>📚 Word of the Day</h3>
