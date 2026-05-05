@@ -29,12 +29,13 @@ function App() {
           <button onClick={() => setPage("analytics")}>📊 Dashboard</button>
         </header>
 
-        <h2>What word do you want to look up?</h2>
 
         <main>
   {page === "home" && (
     <>
       <WordOfTheDay />
+      <br></br>
+        <h2>What word do you want to look up?</h2>
       <Dictionary defaultKeyword="love" />
     </>
   )}
