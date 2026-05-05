@@ -59,6 +59,12 @@ export default function Dictionary(props) {
     localStorage.setItem("favourites", JSON.stringify(updated));
   }
 
+
+  function clearRecent() {
+  setRecent([]);
+  localStorage.removeItem("recentWords");
+}
+
   // SEARCH FUNCTION
   async function search(word = keyword) {
     setLoading(true);
@@ -177,11 +183,11 @@ export default function Dictionary(props) {
       )}
 
       {/* RECENT */}
-      <RecentlySearched
-        items={recent}
-        onClick={handleRecentClick}
-      />
-
+    <RecentlySearched
+       items={recent}
+       onClick={handleRecentClick}
+      onClear={clearRecent}
+     />
       {/* ⭐ FAVOURITES (NOW WORKS) */}
       <Favourites
         items={favourites}
