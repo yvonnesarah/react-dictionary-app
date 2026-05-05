@@ -6,25 +6,19 @@ export default function Photos(props) {
 
   if (!props.photos || props.photos.length === 0) return null;
 
-  // ✅ Robust dedupe using image URL
-const normalize = (url) => (url || "").split("?")[0];
+  // ✅ Stronger dedupe using ONLY original image URL
+  const seen = new Set();
 
-const seen = new Set();
+  const photos = props.photos
+    .filter((photo) => {
+      const key = (photo.src.original || "").split("?")[0];
 
-const photos = props.photos
-  .filter((photo) => {
-    const key = [
-      normalize(photo.src.original),
-      normalize(photo.src.landscape),
-      photo.alt?.trim().toLowerCase()
-    ].join("|");
+      if (seen.has(key)) return false;
 
-    if (seen.has(key)) return false;
-
-    seen.add(key);
-    return true;
-  })
-  .slice(0, 9);
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 9);
 
   return (
     <section className="Photos">
@@ -35,9 +29,13 @@ const photos = props.photos
           <div className="photo-card" key={photo.src.original}>
             <img
               src={photo.src.landscape}
-              alt={photo.alt}
+              alt={photo.alt || "Image"}
               onClick={() => setSelectedImage(photo)}
             />
+
+            {photo.alt && (
+              <p className="photo-description">{photo.alt}</p>
+            )}
           </div>
         ))}
       </div>
@@ -55,7 +53,16 @@ const photos = props.photos
               ✕
             </button>
 
-            <img src={selectedImage.src.original} alt={selectedImage.alt} />
+            <img
+              src={selectedImage.src.original}
+              alt={selectedImage.alt || "Image"}
+            />
+
+            {selectedImage.alt && (
+              <p className="lightbox-description">
+                {selectedImage.alt}
+              </p>
+            )}
           </div>
         </div>
       )}
