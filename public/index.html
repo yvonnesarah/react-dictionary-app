@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character encoding for proper text rendering -->
     <meta charset="utf-8" />
-    
+
+    <!-- Ensures responsive scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme color for browser UI (e.g., mobile address bar) -->
     <meta name="theme-color" content="#000000" />
 
-    <!-- SEO -->
+    <!-- ================= SEO (Search Engine Optimization) ================= -->
+
+    <!-- Description of the app shown in search results -->
     <meta
       name="description"
       content="A dictionary app that provides definitions, phonetics, synonyms, and examples for English words. Improve your vocabulary with this simple React dictionary tool."
     />
+
+    <!-- Keywords to help search engines understand page content -->
     <meta
       name="keywords"
       content="dictionary app, English dictionary, word definitions, vocabulary, language learning, React dictionary"
     />
+
+    <!-- Author of the website/app -->
     <meta name="author" content="Yvonne Adedeji" />
 
-    <!-- Favicon -->
+    <!-- ================= Favicon (browser tab icon) ================= -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
-    <!-- Google Font -->
+    <!-- ================= Google Fonts ================= -->
+
+    <!-- Preconnect improves loading performance for external fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Importing Poppins font family from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Bootstrap Icons -->
+    <!-- ================= Icons Library ================= -->
+
+    <!-- Bootstrap Icons for UI icons (search, sound, etc.) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
 
+    <!-- Page title shown in browser tab -->
     <title>React Dictionary App</title>
   </head>
 
   <body>
+    <!-- Message shown if JavaScript is disabled in the browser -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- React App Root -->
+    <!-- ================= React Application Root ================= -->
+    <!-- React will mount the entire app inside this div -->
     <div id="root"></div>
   </body>
 </html>
