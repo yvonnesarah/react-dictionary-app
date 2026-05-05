@@ -56,7 +56,7 @@
   z-index: 999;
 }
 
-/* 👇 KEY FIX: smaller preview box */
+/* smaller preview box */
 .lightbox-content {
   position: relative;
   max-width: 500px;   /* controls image size */
@@ -92,6 +92,20 @@
 
 .close-btn:hover {
   background: #66bfbf;
+}
+
+.photo-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.lightbox-description {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #eee;
+  text-align: center;
 }
 
 /* Responsive */
