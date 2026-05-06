@@ -1,28 +1,33 @@
+/* Style for <h3> headings inside the .Meaning container */
 .Meaning h3 {
-  font-size: 24px;
-  line-height: 1.5;
-  font-weight: bold;
+  font-size: 24px;       /* Sets heading size */
+  line-height: 1.5;      /* Controls vertical spacing between lines */
+  font-weight: bold;     /* Makes the text bold */
 }
 
+/* Main container for a meaning block */
 .Meaning {
-  margin: 20px 0;
+  margin: 20px 0;        /* Adds vertical spacing above and below each block */
 }
 
+/* Definition text inside the .Meaning container */
 .Meaning .Definition {
-  font-size: 15px;
+  font-size: 15px;       /* Slightly smaller font for definition text */
 }
 
+/* Example sentence styling */
 .Meaning .Example {
-  color: #de5b7b;
-  font-style: normal;
-  margin-top: 10px;
-  font-size: 14px;
+  color: #de5b7b;        /* Pinkish color to distinguish examples */
+  font-style: normal;    /* Ensures text is not italic (override if needed) */
+  margin-top: 10px;      /* Space above the example text */
+  font-size: 14px;       /* Slightly smaller than definition text */
 }
 
+/* Tag label styling (e.g., part of speech like "noun", "verb") */
 .tag {
-  font-size: 12px;
-  background: #eee;
-  padding: 2px 8px;
-  border-radius: 10px;
-  margin-left: 8px;
+  font-size: 12px;       /* Small text for tags */
+  background: #eee;      /* Light gray background */
+  padding: 2px 8px;      /* Space inside the tag */
+  border-radius: 10px;   /* Rounded pill shape */
+  margin-left: 8px;      /* Space between tag and preceding element */
 }

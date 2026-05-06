@@ -1,15 +1,16 @@
+/* Container for the list of synonyms */
 .Synonyms {
-  margin-top: 14px;
-  font-size: 14px;
-  white-space: normal;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  margin-top: 14px;          /* Adds space above the synonyms section */
+  font-size: 14px;           /* Sets text size */
+  white-space: normal;       /* Allows text to wrap onto multiple lines */
+  display: flex;             /* Uses flexbox for layout */
+  flex-wrap: wrap;           /* Allows items to wrap onto new lines */
+  gap: 10px;                 /* Adds consistent spacing between items */
 }
 
+/* Individual synonym item (pill-style tag) */
 .Each-synonym {
-  border-radius: 40px;
-  border: 1px solid #70757a;
-  padding: 5px 15px;
-  margin-right: 5px;
+  border-radius: 40px;       /* Makes the element rounded (pill shape) */
+  border: 1px solid #70757a; /* Adds a subtle grey border */
+  padding: 5px 15px;         /* Adds space inside the item (top/bottom, left/right) */
 }

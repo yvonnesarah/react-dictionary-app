@@ -1,70 +1,78 @@
+/* ===== Global Styles ===== */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  box-sizing: border-box;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default padding */
+  font-family: 'Arial', sans-serif; /* Set default font */
+  box-sizing: border-box; /* Include padding & border in element width/height */
+  line-height: 1.6; /* Improve text readability */
+  color: #333; /* Default text color */
+  background-color: #f9f9f9; /* Light background */
 }
 
+/* ===== App Layout ===== */
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Full viewport height */
 }
 
+/* Centered container for content */
 .container {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 90%; /* Responsive width */
+  max-width: 900px; /* Limit max width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Inner spacing */
 }
 
+/* ===== Header ===== */
 .App-header {
-  background-color: #66bfbf;
-  color: #fcfefe;
-  padding: 20px 0;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  background-color: #66bfbf; /* Teal background */
+  color: #fcfefe; /* Light text */
+  padding: 20px 0; /* Vertical padding */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below header */
 }
 
 .App-header h1 {
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
+  font-size: 2rem; /* Large heading */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center text */
 }
 
-
+/* ===== Main Content ===== */
 main {
-  flex-grow: 1;
-  background: #fff;
+  flex-grow: 1; /* Fill remaining vertical space */
+  background: #fff; /* White background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Section headings */
 h2 {
   text-align: center;
-  color: #7572f4;
+  color: #7572f4; /* Purple accent */
 }
 
+/* ===== Footer ===== */
 footer {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #666;
+  color: #666; /* Muted text */
   text-align: center;
 }
 
 footer a {
-  color: #f76b8a;
-  text-decoration: none;
+  color: #f76b8a; /* Pink link */
+  text-decoration: none; /* Remove underline */
   font-weight: bold;
 }
 
 footer a:hover {
-  text-decoration: none;
+  text-decoration: none; /* Keep no underline on hover */
 }
+
+/* ===== Themes ===== */
 
 /* Light Theme (default) */
 body.light {
@@ -74,19 +82,22 @@ body.light {
 
 /* Dark Theme */
 body.dark {
-  background-color: #121212;
-  color: #9ACAFF;
+  background-color: #121212; /* Dark background */
+  color: #9ACAFF; /* Light blue text */
 }
 
+/* Dark mode header */
 body.dark .App-header {
   background-color: #1f1f1f;
 }
 
+/* Dark mode main content */
 body.dark main {
   background-color: #1e1e1e;
-  box-shadow: none;
+  box-shadow: none; /* Remove shadow */
 }
 
+/* Dark mode specific components */
 body.dark .Dictionary {
   background-color: #1e1e1e;
 }
@@ -103,14 +114,14 @@ body.dark .Results {
 }
 
 body.dark .Meaning .Example {
-  color: #ff9aa2;
+  color: #ff9aa2; /* Highlight examples */
 }
 
 body.dark footer {
   color: #aaa;
 }
 
-/* Toggle Button */
+/* ===== Theme Toggle Button ===== */
 .theme-toggle {
   margin: 10px auto 0;
   display: block;
@@ -124,9 +135,11 @@ body.dark footer {
 }
 
 .theme-toggle:hover {
-  opacity: 0.8;
+  opacity: 0.8; /* Slight fade on hover */
 }
 
+/* ===== Duplicate Base Styles (Second Section) ===== */
+/* NOTE: This overrides earlier body styles */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f9;
@@ -134,20 +147,23 @@ body {
   padding: 0;
 }
 
+/* Smaller container layout */
 .container {
   max-width: 700px;
-  margin: 50px auto;
+  margin: 50px auto; /* Center with top spacing */
   padding: 20px;
   text-align: center;
 }
 
+/* Main heading */
 h1 {
   margin-bottom: 20px;
 }
 
+/* ===== Search UI ===== */
 .search-box {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Space between input & button */
   justify-content: center;
 }
 
@@ -161,16 +177,17 @@ input {
 button {
   padding: 10px 15px;
   border: none;
-  background: #4a63e7;
+  background: #4a63e7; /* Blue button */
   color: white;
   border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #3b4fd1;
+  background: #3b4fd1; /* Darker blue on hover */
 }
 
+/* ===== Card Component ===== */
 .card {
   margin-top: 20px;
   background: white;
@@ -180,6 +197,7 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Audio button (e.g., pronunciation) */
 .audio-btn {
   margin-left: 10px;
   background: transparent;
@@ -188,35 +206,40 @@ button:hover {
   cursor: pointer;
 }
 
+/* Phonetic text styling */
 .phonetic {
   color: gray;
 }
 
+/* Meaning section */
 .meaning {
   margin-top: 15px;
 }
 
+/* Definition indentation */
 .definition {
   margin-left: 10px;
 }
 
+/* Example sentence */
 .example {
   font-style: italic;
   color: #666;
 }
 
+/* Error message */
 .error {
   color: red;
   margin-top: 15px;
 }
 
-/* Responsive design */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .App-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Smaller heading on mobile */
   }
 
   main {
-    padding: 15px;
+    padding: 15px; /* Reduce padding */
   }
 }

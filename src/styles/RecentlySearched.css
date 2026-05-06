@@ -1,78 +1,88 @@
+/* Container for the "Recently Searched" section */
 .RecentlySearched {
-  margin: 16px 0;
-  padding: 12px;
-  background: var(--recent-bg, #ffffff);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 16px 0; /* Space above and below the container */
+  padding: 12px; /* Inner spacing */
+  background: var(--recent-bg, #ffffff); /* Background with CSS variable fallback */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Subtle shadow for elevation */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Light border */
 }
 
+/* Wrapper for the list of recent search items */
 .recent-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  gap: 10px; /* Space between items */
 }
 
+/* Individual recent search item (pill style) */
 .recent-item {
-  padding: 7px 14px;
-  border: 1px solid var(--recent-border, #e0e0e0);
-  border-radius: 999px;
-  background: var(--recent-item-bg, #f6f6f6);
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--recent-text, #333);
-  transition: all 0.2s ease-in-out;
-  user-select: none;
+  padding: 7px 14px; /* Inner spacing for pill shape */
+  border: 1px solid var(--recent-border, #e0e0e0); /* Border with fallback */
+  border-radius: 999px; /* Fully rounded (pill shape) */
+  background: var(--recent-item-bg, #f6f6f6); /* Background color */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  font-size: 13px; /* Text size */
+  font-weight: 500; /* Slightly bold text */
+  color: var(--recent-text, #333); /* Text color */
+  transition: all 0.2s ease-in-out; /* Smooth hover/interaction animation */
+  user-select: none; /* Prevent text selection on click */
 }
 
+/* Hover state for recent items */
 .recent-item:hover {
-  background: #66bfbf;
-  color: #fff;
-  border-color: #66bfbf;
-  transform: translateY(-1px);
+  background: #66bfbf; /* Highlight background */
+  color: #fff; /* White text */
+  border-color: #66bfbf; /* Match border to background */
+  transform: translateY(-1px); /* Slight lift effect */
 }
 
+/* Active (pressed) state */
 .recent-item:active {
-  transform: translateY(0);
+  transform: translateY(0); /* Reset lift when clicked */
 }
 
+/* Accessibility: focus state for keyboard users */
 .recent-item:focus-visible {
-  outline: 2px solid #66bfbf;
-  outline-offset: 2px;
+  outline: 2px solid #66bfbf; /* Visible focus ring */
+  outline-offset: 2px; /* Space between element and outline */
 }
 
+/* Header section containing title + clear button */
 .recent-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Push items apart */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 8px; /* Space below header */
 }
 
+/* "Clear" button styling */
 .clear-btn {
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.2s ease;
+  border: 1px solid #ccc; /* Light border */
+  padding: 5px 10px; /* Button padding */
+  border-radius: 20px; /* Rounded button */
+  font-size: 12px; /* Smaller text */
+  cursor: pointer; /* Clickable */
+  transition: 0.2s ease; /* Smooth hover transition */
 }
 
+/* Hover state for clear button */
 .clear-btn:hover {
-  background: #ff4d4d;
-  color: white;
-  border-color: #ff4d4d;
+  background: #ff4d4d; /* Red background on hover */
+  color: white; /* White text */
+  border-color: #ff4d4d; /* Match border */
 }
 
 /* Optional dark mode support */
 @media (prefers-color-scheme: dark) {
   .RecentlySearched {
-    --recent-bg: #1e1e1e;
-    --recent-border: #333;
-    --recent-item-bg: #2a2a2a;
-    --recent-text: #eaeaea;
+    --recent-bg: #1e1e1e; /* Dark background */
+    --recent-border: #333; /* Darker border */
+    --recent-item-bg: #2a2a2a; /* Item background */
+    --recent-text: #eaeaea; /* Light text */
   }
 
+  /* Adjust hover color for better contrast in dark mode */
   .recent-item:hover {
     background: #4fb6b6;
     border-color: #4fb6b6;

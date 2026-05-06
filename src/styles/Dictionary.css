@@ -1,110 +1,135 @@
-/* Dictionary container */
+/* =========================
+   📦 Dictionary Container
+   Main card holding the app
+========================= */
 .Dictionary {
-  background-color: #ffffff; 
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  width: 100%;
-  max-width: 500px;
+  background-color: #ffffff; /* White background */
+  padding: 20px; /* Inner spacing */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 100%; /* Full width */
+  max-width: 500px; /* Limit size on large screens */
 }
 
-/* Form Section */
+/* =========================
+   📄 Form Section
+   Wraps input + button
+========================= */
 section {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space below form */
 }
 
-/* Input Group Styling */
+/* =========================
+   🔍 Input Group
+   Aligns input + button
+========================= */
 .input-group {
-  display: flex;
-  align-items: stretch;
-  border-radius: 8px;
-  overflow: hidden; 
+  display: flex; /* Horizontal layout */
+  align-items: stretch; /* Same height */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow edges */
 }
 
-/* Input Field */
+/* =========================
+   ⌨️ Search Input Field
+========================= */
 input[type="search"] {
-  flex: 1; 
-  border: 1px solid #ced4da;
-  padding: 10px;
-  font-size: 16px;
-  border-right: none; 
-  outline: none; 
+  flex: 1; /* Take available space */
+  border: 1px solid #ced4da; /* Light border */
+  padding: 10px; /* Inner spacing */
+  font-size: 16px; /* Readable text */
+  border-right: none; /* Merge with button */
+  outline: none; /* Remove default focus outline */
 }
 
+/* Input focus effect */
 input[type="search"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Glow effect */
 }
 
-/* Search Button */
+/* =========================
+   🔘 Search Button
+========================= */
 button.btn {
-  background-color: #007bff;
-  border: none;
-  color: #ffffff; 
-  padding: 10px 20px;
-  cursor: pointer;
-  display: flex;
+  background-color: #007bff; /* Primary blue */
+  border: none; /* Remove border */
+  color: #ffffff; /* White text/icon */
+  padding: 10px 20px; /* Button size */
+  cursor: pointer; /* Pointer on hover */
+  display: flex; /* Center icon */
   align-items: center;
   justify-content: center;
 }
 
+/* Hover state */
 button.btn:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3; /* Darker blue */
 }
 
+/* Icon inside button */
 button.btn i {
-  font-size: 18px; 
+  font-size: 18px; /* Icon size */
 }
 
-/* Results Component */
+/* =========================
+   📊 Results Section
+========================= */
 .Results {
-  margin-top: 20px;
+  margin-top: 20px; /* Space above results */
   padding: 10px;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #e9ecef; /* Divider line */
   font-size: 16px;
-  color: #5f1854;
+  color: #5f1854; /* Text color */
 }
 
-/* 🔄 Loading State */
+/* =========================
+   🔄 Loading State
+========================= */
 .loading {
-  text-align: center;
+  text-align: center; /* Center content */
   margin: 20px 0;
   font-weight: 500;
   color: #4a63e7;
 }
 
+/* Spinner animation */
 .spinner {
   width: 30px;
   height: 30px;
-  border: 4px solid #ddd;
-  border-top: 4px solid #333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border: 4px solid #ddd; /* Light ring */
+  border-top: 4px solid #333; /* Dark rotating part */
+  border-radius: 50%; /* Circle */
+  animation: spin 1s linear infinite; /* Continuous spin */
   margin: 10px auto;
 }
 
+/* Keyframes for spinner */
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* 🍞 Toast message */
+/* =========================
+   🍞 Toast Message (Popup)
+========================= */
 .toast-message {
-  position: fixed;
+  position: fixed; /* Stay on screen */
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
-  background: #222;
+  transform: translateX(-50%); /* Center horizontally */
+  background: #222; /* Dark background */
   color: #fff;
   padding: 12px 18px;
-  border-radius: 30px;
+  border-radius: 30px; /* Pill shape */
   font-size: 14px;
-  z-index: 9999;
-  animation: fadeInOut 3s ease-in-out;
+  z-index: 9999; /* Always on top */
+  animation: fadeInOut 3s ease-in-out; /* Auto fade */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Toast animation */
 @keyframes fadeInOut {
   0% { opacity: 0; transform: translate(-50%, -10px); }
   10% { opacity: 1; transform: translate(-50%, 0); }
@@ -112,41 +137,23 @@ button.btn i {
   100% { opacity: 0; transform: translate(-50%, -10px); }
 }
 
-.toast-message {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-size: 14px;
-  z-index: 9999;
-}
-
-.loading {
-  text-align: center;
-  margin: 20px 0;
-  font-weight: 500;
-  color: #4a63e7;
-}
-
-/* Responsive Design */
+/* =========================
+   📱 Responsive Design
+========================= */
 @media (max-width: 600px) {
   .Dictionary {
-    padding: 15px;
+    padding: 15px; /* Smaller padding */
   }
 
   input[type="search"] {
-    font-size: 14px;
+    font-size: 14px; /* Smaller text */
   }
 
   button.btn {
-    padding: 8px 15px;
+    padding: 8px 15px; /* Smaller button */
   }
 
   button.btn i {
-    font-size: 16px;
+    font-size: 16px; /* Smaller icon */
   }
 }

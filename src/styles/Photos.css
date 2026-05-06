@@ -1,122 +1,134 @@
 /* Photos.css */
+
+/* Main container for the Photos page */
 .Photos {
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 20px;              /* Space inside the container */
+  background-color: #f9f9f9;  /* Light background color */
 }
 
+/* Page title styling */
 .Photos h1 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin: 0 0 20px;
-  background-color: #66bfbf;
-  color: white;
-  padding: 15px 0;
-  border-radius: 10px;
+  text-align: center;         /* Center the heading */
+  font-size: 1.8rem;          /* Slightly larger text */
+  margin: 0 0 20px;           /* Space below heading */
+  background-color: #66bfbf;  /* Teal background */
+  color: white;               /* White text */
+  padding: 15px 0;            /* Vertical padding */
+  border-radius: 10px;        /* Rounded corners */
 }
 
-/* Grid */
+/* Grid layout for photos */
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  display: grid;                          /* Use CSS grid */
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 12px;                              /* Space between items */
 }
 
-/* Thumbnail cards */
+/* Individual photo card (thumbnail container) */
 .photo-card {
-  overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-  height: 120px;
-  position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;                      /* Hide overflow (for rounded corners) */
+  border-radius: 10px;                   /* Rounded edges */
+  cursor: pointer;                       /* Pointer cursor on hover */
+  height: 120px;                         /* Fixed height for uniform grid */
+  position: relative;                    /* For positioning inner elements */
+  transition: transform 0.2s ease,       /* Smooth scale animation */
+              box-shadow 0.2s ease;      /* Smooth shadow animation */
 }
 
+/* Image inside each photo card */
 .photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%;           /* Fill container width */
+  height: 100%;          /* Fill container height */
+  object-fit: cover;     /* Crop image nicely */
+  display: block;        /* Remove inline spacing */
 }
 
+/* Hover effect for photo cards */
 .photo-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);                          /* Slight zoom effect */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);       /* Add depth */
 }
 
+/* Fullscreen overlay (lightbox background) */
 .lightbox {
-  position: fixed;
+  position: fixed;                   /* Stay fixed on screen */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+  width: 100%;                      /* Full width */
+  height: 100%;                     /* Full height */
+  background: rgba(0, 0, 0, 0.85);  /* Dark transparent overlay */
+  display: flex;                    /* Center content */
+  align-items: center;              /* Vertical center */
+  justify-content: center;          /* Horizontal center */
+  z-index: 999;                     /* Appear above everything */
 }
 
-/* smaller preview box */
+/* Container for enlarged image */
 .lightbox-content {
   position: relative;
-  max-width: 500px;   /* controls image size */
-  max-height: 70vh;   /* keeps it from being huge */
-  padding: 10px;
+  max-width: 500px;   /* Limit image width */
+  max-height: 70vh;   /* Prevent it from being too tall */
+  padding: 10px;      /* Inner spacing */
 }
 
+/* Enlarged image styling */
 .lightbox-content img {
-  width: 100%;
-  height: auto;
-  max-height: 70vh;
-  object-fit: contain;
-  border-radius: 10px;
+  width: 100%;          /* Responsive width */
+  height: auto;         /* Maintain aspect ratio */
+  max-height: 70vh;     /* Limit height */
+  object-fit: contain;  /* Show full image without cropping */
+  border-radius: 10px;  /* Rounded corners */
 }
 
-/* Close button (clean + fixed top right) */
+/* Close button (top-right of lightbox) */
 .close-btn {
   position: absolute;
-  top: -12px;
+  top: -12px;                        /* Slightly outside the box */
   right: -12px;
-  background: #66bfbf;
+  background: #66bfbf;              /* Teal background */
   border: none;
   font-size: 16px;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 50%;               /* Circular button */
   cursor: pointer;
-  display: flex;
+  display: flex;                    /* Center icon/text */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Floating effect */
 }
 
+/* Close button hover state (currently same color, could be changed) */
 .close-btn:hover {
   background: #66bfbf;
 }
 
+/* Caption under each thumbnail */
 .photo-description {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 6px;
-  text-align: center;
+  font-size: 0.9rem;     /* Slightly smaller text */
+  color: #555;           /* Medium grey */
+  margin-top: 6px;       /* Space above text */
+  text-align: center;    /* Center text */
 }
 
+/* Caption inside the lightbox */
 .lightbox-description {
-  margin-top: 12px;
-  font-size: 1rem;
-  color: #eee;
+  margin-top: 12px;      /* Space above description */
+  font-size: 1rem;       /* Normal text size */
+  color: #eee;           /* Light text for dark background */
   text-align: center;
 }
 
-/* Responsive */
+/* Responsive: Tablet view */
 @media (max-width: 768px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
   }
 }
 
+/* Responsive: Mobile view */
 @media (max-width: 480px) {
   .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout */
   }
 }
