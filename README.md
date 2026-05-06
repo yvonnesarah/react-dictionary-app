@@ -55,6 +55,7 @@ Image Features
 * Limit of max images (performance optimization)
 
 Audio & Accessibility
+
 Speech synthesis (Text-to-Speech) using:
 * Browser Web Speech API
 
@@ -133,6 +134,7 @@ User Interaction Features
 * Persistent user data ✅
 
 Local Storage (Persistence)
+
 Stores:
 * Recent searches ✅
 * Favourite words ✅
@@ -142,6 +144,7 @@ Stores:
 * JSON parsing/stringifying ✅
 
 Analytics Dashboard
+
 Displays:
 * Most recent searches ✅
 * Favourite words ✅
@@ -164,6 +167,7 @@ Includes:
 * Example ✅
 
 Related Words System
+
 Categorized display:
 * Antonyms ✅
 * Similar words ✅
@@ -254,7 +258,7 @@ Accessibility & UX Enhancements
 🚧 Challenges Faced
 
 1. Managing multiple API integrations
-The app uses multiple APIs (dictionary, images, and Datamuse). Coordinating all asynchronous requests with `Promise.all()` while handling failures gracefully was initially complex.
+The app uses multiple APIs (dictionary, images, and Datamuse). Coordinating all asynchronous requests with Promise.all() while handling failures gracefully was initially complex.
 
 2. State synchronization with localStorage
  Keeping recent searches and favourites in sync between React state and localStorage required careful handling to avoid stale or duplicated data.
